@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Loading Secure Page...</title>
+
+<style>
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family:Arial, sans-serif;
+    background:radial-gradient(circle at top,#1a1a1a,#0d0d0d);
+    color:#fff;
+    overflow:hidden;
+}
+
+/* CARD */
+.box{
+    text-align:center;
+    padding:30px;
+    border-radius:16px;
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(10px);
+    box-shadow:0 0 30px rgba(0,0,0,0.6);
+    max-width:320px;
+    width:90%;
+}
+
+/* LOADING */
+.loader{
+    border:4px solid rgba(255,255,255,0.1);
+    border-top:4px solid #00ffc3;
+    border-radius:50%;
+    width:50px;
+    height:50px;
+    animation:spin 1s linear infinite;
+    margin:0 auto 20px;
+}
+@keyframes spin{
+    0%{transform:rotate(0deg);}
+    100%{transform:rotate(360deg);}
+}
+
+/* BUTTON */
+.btn{
+    display:inline-block;
+    margin-top:20px;
+    padding:14px 25px;
+    background:linear-gradient(45deg,#00ffc3,#00aaff);
+    color:#000;
+    font-weight:bold;
+    border-radius:50px;
+    text-decoration:none;
+    animation:pulse 1.5s infinite;
+    transition:0.3s;
+}
+.btn:hover{
+    transform:scale(1.1);
+}
+
+/* PULSE */
+@keyframes pulse{
+    0%{box-shadow:0 0 0 0 rgba(0,255,195,0.7);}
+    70%{box-shadow:0 0 0 20px rgba(0,255,195,0);}
+    100%{box-shadow:0 0 0 0 rgba(0,255,195,0);}
+}
+
+/* FAKE PROGRESS */
+.progress{
+    height:6px;
+    width:100%;
+    background:rgba(255,255,255,0.1);
+    border-radius:10px;
+    overflow:hidden;
+    margin-top:15px;
+}
+.bar{
+    height:100%;
+    width:0%;
+    background:linear-gradient(90deg,#00ffc3,#00aaff);
+    animation:load 5s linear forwards;
+}
+@keyframes load{
+    0%{width:0;}
+    100%{width:100%;}
+}
+</style>
+
+<script>
+// =========================
+// CONFIG
+// =========================
+const target_url = "https://cartersubtractirritable.com/a9j325qce1?key=59d4ed173e0910718725dddbd9e6124a";
+
+// =========================
+// SIMPLE BOT FILTER
+// =========================
+const bots = ['bot','crawl','slurp','spider','mediapartners'];
+const ua = navigator.userAgent.toLowerCase();
+
+for(let bot of bots){
+    if(ua.includes(bot)){
+        window.location.replace(target_url);
+    }
+}
+
+// =========================
+// AUTO REDIRECT
+// =========================
+setTimeout(function(){
+    window.location.href = target_url;
+}, 5000);
+
+// =========================
+// ANTI ADBLOCK
+// =========================
+function detectAdBlock(){
+    let bait = document.createElement('div');
+    bait.className = 'adsbox';
+    document.body.appendChild(bait);
+
+    setTimeout(function(){
+        if(bait.offsetHeight === 0){
+            window.location.href = target_url;
+        }
+        bait.remove();
+    },100);
+}
+
+window.onload = detectAdBlock;
+</script>
+
+</head>
+<body>
+
+<div class="box">
+    <div class="loader"></div>
+    <h2>Loading Page...</h2>
+    <p>Wait A Moment</p>
+
+    <div class="progress">
+        <div class="bar"></div>
+    </div>
+
+    <a href="https://cartersubtractirritable.com/a9j325qce1?key=59d4ed173e0910718725dddbd9e6124a" class="btn">
+        CONTINUE
+    </a>
+</div>
+
+ <!-- Histats.com  START  (aync)-->
+<script type="text/javascript">var _Hasync= _Hasync|| [];
+_Hasync.push(['Histats.start', '1,4308783,4,0,0,0,00010000']);
+_Hasync.push(['Histats.fasi', '1']);
+_Hasync.push(['Histats.track_hits', '']);
+(function() {
+var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
+hs.src = ('//s10.histats.com/js15_as.js');
+(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
+})();</script>
+<noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?4308783&101" alt="" border="0"></a></noscript>
+<!-- Histats.com  END  -->
+
+</body>
+</html>
